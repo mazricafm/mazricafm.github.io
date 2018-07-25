@@ -1,0 +1,19 @@
+---
+title: パーソナリティの一覧
+layout: page
+permalink: /personalities/
+---
+
+{% for personalityObj in site.data.personalities %}
+  {% assign personality = personalityObj[1] %}
+  <div class="personality">
+    <a href="{{ personality.url }}">
+      <div class="personality-img">
+        <img src="{{ personality.image }}" alt="{{ personality.name }}" />
+      </div>
+      <div class="personality-name">
+        {{ personality.name }}
+      </div>
+    </a>
+  </div>
+{% endfor %}

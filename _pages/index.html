@@ -1,0 +1,48 @@
+---
+layout: top
+permalink: /
+---
+
+<div>
+  {% for post in site.posts %}
+    <article>
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <p>{{ post.description }}</p>
+      <div>
+        <h4>パーソナリティ</h4>
+        <ul>
+          {% for personalityId in post.personalities %}
+            {% assign personality = site.data.personalities[personalityId] %}
+            <li>
+              <a href="{{ personality.url }}">
+                <div class="personality-img">
+                  <img src="{{ personality.image }}" alt="{{ personality.name }}" />
+                </div>
+                <div class="personality-name">
+                  {{ personality.name }}
+                </div>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+        
+        <h4>ゲスト</h4>
+        <ul>
+          {% for guestId in post.guests %}
+            {% assign guest = site.data.guests[guestId] %}
+            <li>
+              <a href="{{ guest.url }}">
+                <div class="guest-img">
+                  <img src="{{ guest.image }}" alt="{{ guest.name }}" />
+                </div>
+                <div class="guest-name">
+                  {{ guest.name }}
+                </div>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </article>
+  {% endfor %}
+</div>

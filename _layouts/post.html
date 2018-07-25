@@ -2,8 +2,6 @@
 layout: default
 ---
 
-{{ content }}
-
 <div>
   <input type="range" class="amplitude-song-slider" amplitude-main-song-slider="true" step=".1"/>
   <span class="amplitude-current-time" amplitude-main-current-time="true"></span>/<span class="amplitude-duration-time" amplitude-main-duration-time="true"></span>
@@ -25,9 +23,26 @@ layout: default
 </div>
 
 <div class="download">
-  <a href="{{ page.audio }}">MP3ファイルをダウンロード</a>
+  <a href="{{ page.audio }}" download="{{ site.title }}_{{ page.title }}.mp3">MP3ファイルをダウンロード</a>
 </div>
 
-<div>
-  mp3 borrowed from <a href="http://www.ne.jp/asahi/music/myuu/wave/wave.htm">フリーWave,MP3</a>
-</div>
+{{ page.description }}
+
+{{ content }}
+
+{% if page.audio != null %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/amplitudejs/3.3.0/amplitude.min.js"></script>
+  <script>
+    Amplitude.init({
+      "songs": [
+        {
+          "name": "{{ page.title }}",
+          "artist": "Artist Name",
+          "album": "Album Name",
+          "url": "{{ page.audio }}",
+          // "cover_art_url": "/cover/art/url.jpg"
+        },
+      ]
+    });
+  </script>
+{% endif %}

@@ -1,0 +1,19 @@
+---
+title: 出演者の一覧
+layout: page
+permalink: /guests/
+---
+
+{% for guestObj in site.data.guests %}
+  {% assign guest = guestObj[1] %}
+  <div class="guest">
+    <a href="{{ guest.url }}">
+      <div class="guest-img">
+        <img src="{{ guest.image }}" alt="{{ guest.name }}" />
+      </div>
+      <div class="guest-name">
+        {{ guest.name }}
+      </div>
+    </a>
+  </div>
+{% endfor %}
