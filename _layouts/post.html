@@ -3,3 +3,31 @@ layout: default
 ---
 
 {{ content }}
+
+<div>
+  <input type="range" class="amplitude-song-slider" amplitude-main-song-slider="true" step=".1"/>
+  <span class="amplitude-current-time" amplitude-main-current-time="true"></span>/<span class="amplitude-duration-time" amplitude-main-duration-time="true"></span>
+</div>
+
+<div>
+  Vol: <input type="range" class="amplitude-volume-slider"/>
+</div>
+
+<div>
+  <span class="amplitude-play-pause amplitude-paused" amplitude-song-index="0">Play/Pause</span> - 
+  <span class="amplitude-mute">Mute</span> - 
+  <span class="amplitude-playback-speed">x1/x1.5/x2</span>
+</div>
+
+<div>
+  <span class="amplitude-skip-to" amplitude-song-index="0" amplitude-location="30">skip to 30sec</span> - 
+  <span class="amplitude-skip-to" amplitude-song-index="0" amplitude-location="100">skip to 100sec</span>
+</div>
+
+<div class="download">
+  <a href="{{ page.audio }}">MP3ファイルをダウンロード</a>
+</div>
+
+<div>
+  mp3 borrowed from <a href="http://www.ne.jp/asahi/music/myuu/wave/wave.htm">フリーWave,MP3</a>
+</div>

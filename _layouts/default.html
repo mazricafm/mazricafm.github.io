@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+  <!-- <meta name="twitter:image" content="{{ site.url }}{% if page.image_path %}{{ page.image_path }}{% else %}/images/itunes-artwork-240.jpg{% endif %}" /> -->
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}" />
+  <!-- <meta name="apple-itunes-app" content=""> -->
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+  <!-- <meta property="og:image" content="{{ site.url }}{% if page.image_path %}{{ page.image_path }}{% else %}/images/itunes-artwork-240.jpg{% endif %}" /> -->
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:type" content="blog" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml" />
+  {% if page.layout == "post" and page.audio != null %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.9/mediaelementplayer.min.css" />
+  {% endif %}
   <link rel="stylesheet" href="/css/main.css" />
-  <title>{{site.title}}</title>
 </head>
 <body>
   {{ content }}
+
+  {% if page.layout == "post" and page.audio != null %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/amplitudejs/3.3.0/amplitude.min.js"></script>
+    <script>
+      Amplitude.init({
+        "songs": [
+          {
+            "name": "{{ page.title }}",
+            "artist": "Artist Name",
+            "album": "Album Name",
+            "url": "{{ page.audio }}",
+            // "cover_art_url": "/cover/art/url.jpg"
+          },
+        ]
+      });
+    </script>
+  {% endif %}
 </body>
 </html>
-
