@@ -1,1 +1,15 @@
-theme: jekyll-theme-cayman
+title: Mazrica.fm
+description: >-
+  Mazrica.fm
+baseurl: ""
+url: ""
+timezone: Asia/Tokyo
+include:
+  - _pages
+plugins:
+  - jekyll-feed
+markdown: kramdown
+kramdown:
+  input: GFM
+sass:
+  style: compact
