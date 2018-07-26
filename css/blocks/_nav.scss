@@ -1,0 +1,18 @@
+.nav {
+  &-list {
+    @include flex;
+
+    &-item {
+      margin-right: 1rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        color: $color-sub-light;
+        text-decoration: none;
+      }
+    }
+  }
+}

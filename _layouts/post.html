@@ -2,33 +2,14 @@
 layout: default
 ---
 
-<div>
-  <input type="range" class="amplitude-song-slider" amplitude-main-song-slider="true" step=".1"/>
-  <span class="amplitude-current-time" amplitude-main-current-time="true"></span>/<span class="amplitude-duration-time" amplitude-main-duration-time="true"></span>
+<div class="post">
+  {% include player.html %}
+  {{ page.description }}
+  <div class="markdown">
+    {{ content }}
+  </div>
+  {% include tweet-button.html %}
 </div>
-
-<div>
-  Vol: <input type="range" class="amplitude-volume-slider"/>
-</div>
-
-<div>
-  <span class="amplitude-play-pause amplitude-paused" amplitude-song-index="0">Play/Pause</span> - 
-  <span class="amplitude-mute">Mute</span> - 
-  <span class="amplitude-playback-speed">x1/x1.5/x2</span>
-</div>
-
-<div>
-  <span class="amplitude-skip-to" amplitude-song-index="0" amplitude-location="30">skip to 30sec</span> - 
-  <span class="amplitude-skip-to" amplitude-song-index="0" amplitude-location="100">skip to 100sec</span>
-</div>
-
-<div class="download">
-  <a href="{{ page.audio }}" download="{{ site.title }}_{{ page.title }}.mp3">MP3ファイルをダウンロード</a>
-</div>
-
-{{ page.description }}
-
-{{ content }}
 
 {% if page.audio != null %}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/amplitudejs/3.3.0/amplitude.min.js"></script>

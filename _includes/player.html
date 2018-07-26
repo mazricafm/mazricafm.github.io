@@ -1,0 +1,25 @@
+<div class="player">
+  <div>
+    <input type="range" class="amplitude-song-slider" amplitude-main-song-slider="true" step=".1"/>
+    <span class="amplitude-current-time" amplitude-main-current-time="true"></span>/<span class="amplitude-duration-time" amplitude-main-duration-time="true"></span>
+  </div>
+
+  <div>
+    Vol: <input type="range" class="amplitude-volume-slider" />
+  </div>
+
+  <div>
+    <a class="button amplitude-play-pause amplitude-paused" amplitude-song-index="0">Play/Pause</a> - 
+    <a class="button amplitude-mute">Mute</a> - 
+    <a class="button amplitude-playback-speed">x1/x1.5/x2</a>
+  </div>
+
+  <div>
+    <a class="button amplitude-skip-to" amplitude-song-index="0" amplitude-location="30">skip to 30sec</a> - 
+    <a class="button amplitude-skip-to" amplitude-song-index="0" amplitude-location="100">skip to 100sec</a>
+  </div>
+
+  <div class="download">
+    <a href="{{ page.audio }}" download="{{ site.title }}_{{ page.title }}.mp3">MP3ファイルをダウンロード</a>
+  </div>
+</div>

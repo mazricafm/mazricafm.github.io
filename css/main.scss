@@ -1,8 +1,35 @@
 ---
 ---
 
-// @import "./blocks/player";
+@import "./reset";
+@import "./mixins";
+@import "./variables";
 
-h1, h2 {
-  color: orange;
+@import "./blocks/button";
+@import "./blocks/header";
+@import "./blocks/footer";
+@import "./blocks/nav";
+@import "./blocks/player";
+
+@import "./pages/page";
+@import "./pages/post";
+@import "./pages/top";
+
+html, body {
+  height: 100%;
 }
+
+body {
+  background-color: $color-footer-background;
+}
+
+.container {
+  background-color: $color-footer-background;
+  height: 100%;
+}
+
+.main {
+  background-color: $color-background;
+  padding: 3rem 0;
+}
+

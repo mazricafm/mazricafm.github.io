@@ -1,0 +1,15 @@
+.header {
+  @include flex;
+  @include justify-content-space-between;
+
+  background-color: $color-header-background;
+  padding: 3rem;
+
+  .header-logo {
+    a {
+      color: $color-main;
+      text-decoration: none;
+      font-size: 2.3rem;
+    }
+  }
+}

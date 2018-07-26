@@ -3,6 +3,7 @@ description: >-
   Mazrica.fm
 baseurl: ""
 url: ""
+hashtag: マツリカfm
 timezone: Asia/Tokyo
 include:
   - _pages
@@ -13,3 +14,4 @@ kramdown:
   input: GFM
 sass:
   style: compact
+  sass_dir: css
