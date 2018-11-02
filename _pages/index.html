@@ -3,17 +3,17 @@ layout: top
 permalink: /
 ---
 
-<div>
+<ul>
   {% for post in site.posts %}
-    <article>
-      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-      <p>{{ post.description }}</p>
-      <div>
-        <h4>パーソナリティ</h4>
+    <li class="card">
+      <h1 class="card-heading"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+      <div class="card-note">{{ post.date | date: '%Y-%m-%d' }}</div>
+      <p class="card-description">{{ post.description }}</p>
+      <div class="card-participants">
         <ul>
           {% for personalityId in post.personalities %}
             {% assign personality = site.data.personalities[personalityId] %}
-            <li>
+            <li class="personality">
               <a href="{{ personality.url }}">
                 <div class="personality-img">
                   <img src="{{ personality.image }}" alt="{{ personality.name }}" />
@@ -24,13 +24,9 @@ permalink: /
               </a>
             </li>
           {% endfor %}
-        </ul>
-        
-        <h4>ゲスト</h4>
-        <ul>
           {% for guestId in post.guests %}
             {% assign guest = site.data.guests[guestId] %}
-            <li>
+            <li class="guest">
               <a href="{{ guest.url }}">
                 <div class="guest-img">
                   <img src="{{ guest.image }}" alt="{{ guest.name }}" />
@@ -45,4 +41,4 @@ permalink: /
       </div>
     </article>
   {% endfor %}
-</div>
+  </ul>

@@ -1,15 +1,39 @@
 .header {
-  @include flex;
-  @include justify-content-space-between;
+  background-image: url(../images/artwork.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 400px;
 
-  background-color: $color-header-background;
-  padding: 3rem;
+  &-description {
+    color: $color-text-light-secondary;
+    font-size: 0.9rem;
+  }
 
-  .header-logo {
+  &-heading {
+    color: $color-text-light-primary;
+    text-shadow: 0 1px 5px black;
+    font-size: 2.5rem;
+    font-weight: 500;
+
     a {
-      color: $color-main;
-      text-decoration: none;
-      font-size: 2.3rem;
+      &,
+      &:active,
+      &:focus,
+      &:hover {
+        color: inherit;
+        text-decoration: none;
+      }
     }
+  }
+
+  &-content {
+    @include flex;
+    @include flex-direction(column);
+    @include justify-content(center);
+    height: 100%;
+  }
+
+  &-overlay {
+    height: 100%;
   }
 }

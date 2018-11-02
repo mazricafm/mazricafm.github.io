@@ -2,13 +2,17 @@
 layout: default
 ---
 
-<div class="post">
+<div class="post container">
   {% include player.html %}
   {{ page.description }}
   <div class="markdown">
     {{ content }}
   </div>
   {% include tweet-button.html %}
+
+  <div>
+    <a class="back" href="/">戻る</a>
+  </div>
 </div>
 
 {% if page.audio != null %}
@@ -24,6 +28,14 @@ layout: default
           // "cover_art_url": "/cover/art/url.jpg"
         },
       ]
+    });
+
+    var $back = document.querySelector('.back');
+
+    $back.addEventListener('click', function(e) {
+      if (!confirm('ページを離れようとしています。よろしいですか？')) {
+        e.preventDefault()
+      }
     });
   </script>
 {% endif %}

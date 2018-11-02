@@ -1,1 +1,44 @@
-// .top {}
+.top {
+  .card {
+    background-color: $color-post-background;
+    border: 1px solid #ddd;
+    margin-top: 16px;
+    padding: 32px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &-heading {
+      a {
+        text-decoration: none;
+        color: $color-sub;
+        font-size: 22px;
+        font-weight: bold;
+      }
+    }
+
+    &-note {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #999;
+    }
+
+    &-description {
+      margin-top: 32px;
+    }
+
+    &-participants {
+      margin-top: 32px;
+
+      ul {
+        @include flex;
+        margin-top: 16px;
+
+        li {
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+}

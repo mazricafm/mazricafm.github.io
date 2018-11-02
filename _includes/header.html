@@ -1,8 +1,14 @@
 <header class="header">
-  <h1 class="header-logo">
-    <a href="/">
-      {{site.title}}
-    </a>
-  </h1>
-  {% include nav.html %}
+  <div class="header-overlay">
+    <div class="header-content container">
+      <h1 class="header-heading">
+        <a href="/">
+          {{ site.title }}
+        </a>
+      </h1>
+      <div class="header-description">
+        {{ site.description }}
+      </div>
+    </div>
+  </div>
 </header>

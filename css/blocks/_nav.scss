@@ -1,6 +1,13 @@
 .nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  // background: rgba(0, 0, 0, 0.2);
+
   &-list {
     @include flex;
+    @include justify-content(flex-end);
 
     &-item {
       margin-right: 1rem;
@@ -10,7 +17,7 @@
       }
 
       a {
-        color: $color-sub-light;
+        color: $color-text-light-primary;
         text-decoration: none;
       }
     }

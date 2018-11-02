@@ -10,6 +10,9 @@
 @import "./blocks/footer";
 @import "./blocks/nav";
 @import "./blocks/player";
+@import "./blocks/container";
+@import "./blocks/personality";
+@import "./blocks/guest";
 
 @import "./pages/page";
 @import "./pages/post";
@@ -23,13 +26,8 @@ body {
   background-color: $color-footer-background;
 }
 
-.container {
-  background-color: $color-footer-background;
-  height: 100%;
-}
-
 .main {
   background-color: $color-background;
-  padding: 3rem 0;
+  padding: 32px 0;
 }
 

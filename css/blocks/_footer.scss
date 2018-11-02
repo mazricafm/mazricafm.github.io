@@ -1,6 +1,9 @@
 .footer {
   background-color: $color-footer-background;
-  padding: 1rem 3rem;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 0.9rem;
+  padding-bottom: 64px;
+  padding-top: 64px;
 
   a {
     color: $color-sub;
