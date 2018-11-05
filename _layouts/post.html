@@ -2,29 +2,58 @@
 layout: default
 ---
 
-<article class="post container">
-  <header class="post-header">
-    <h1>{{ page.title }}</h1>
-  </header>
+  <article class="post">
+    <header class="post-header">
+      <h1>{{ page.title }}</h1>
+    </header>
 
-  <section class="post-content">
-    <p class="post-description">
-      {{ page.description }}
-    </p>
+    <section class="post-content">
+      <p class="post-description">
+        {{ page.description }}
+      </p>
 
-    {% include player.html %}
+      <ul class="post-participants">
+        {% for personalityId in page.personalities %}
+          {% assign personality = site.data.personalities[personalityId] %}
+          <li class="personality">
+            <a href="{{ personality.url }}" target="_blank">
+              <div class="personality-img">
+                <img src="{{ personality.image }}" alt="{{ personality.name }}" />
+              </div>
+              <div class="personality-name">
+                {{ personality.name }}
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+        {% for guestId in page.guests %}
+          {% assign guest = site.data.guests[guestId] %}
+          <li class="guest">
+            <a href="{{ guest.url }}" target="_blank">
+              <div class="guest-img">
+                <img src="{{ guest.image }}" alt="{{ guest.name }}" />
+              </div>
+              <div class="guest-name">
+                {{ guest.name }}
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
 
-    <div class="markdown">
-      {{ content }}
-    </div>
-  </section>
+      {% include player.html %}
 
-  {% include tweet-button.html %}
+      <div class="markdown">
+        {{ content }}
+      </div>
+    </section>
 
-  <footer class="post-footer">
-    <a class="back" href="/">戻る</a>
-  </footer>
-</article>
+    {% include tweet-button.html %}
+
+    <footer class="post-footer">
+      <a class="back" href="/">戻る</a>
+    </footer>
+  </article>
 
 {% if page.audio != null %}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/amplitudejs/3.3.0/amplitude.min.js"></script>
