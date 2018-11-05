@@ -1,17 +1,17 @@
 <div class="player">
-  <div>
+  <div class="player-control-slider">
     <input type="range" class="amplitude-song-slider" amplitude-main-song-slider="true" step=".1"/>
     <span class="amplitude-current-time" amplitude-main-current-time="true"></span>/<span class="amplitude-duration-time" amplitude-main-duration-time="true"></span>
   </div>
 
-  <div>
-    Vol: <input type="range" class="amplitude-volume-slider" />
+  <div class="player-control-volume">
+    <i class="fas fa-volume-up"></i> <input type="range" class="amplitude-volume-slider" />
   </div>
 
-  <div>
-    <a class="button amplitude-play-pause amplitude-paused" amplitude-song-index="0">Play/Pause</a> - 
-    <a class="button amplitude-mute">Mute</a> - 
-    <a class="button amplitude-playback-speed">x1/x1.5/x2</a>
+  <div class="player-control-buttons">
+    <a class="button amplitude-play-pause amplitude-paused" amplitude-song-index="0"></a>
+    <a class="button amplitude-mute"></a>
+    <a class="button amplitude-playback-speed"></a>
   </div>
 
   <ol class="player-chapters">

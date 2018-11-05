@@ -1,4 +1,72 @@
 .player {
+  &-control {
+    &-buttons {
+      @include flex;
+
+      a {
+        margin-left: 8px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .amplitude-play-pause {
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+
+    &.amplitude-paused:before {
+      content: "\f04b";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+    }
+  
+    &.amplitude-playing:before {
+      content: "\f04c";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+    }
+  }
+
+  .amplitude-mute {
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+
+    &.amplitude-muted:before {
+      content: "\f028";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+    }
+  
+    &.amplitude-not-muted:before {
+      content: "\f6a9";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+    }
+  }
+
+  .amplitude-playback-speed {
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+
+    &:before {
+      content: "x1";
+    }
+
+    &.amplitude-playback-speed-15:before {
+      content: "x1.5";
+    }
+
+    &.amplitude-playback-speed-20:before {
+      content: "x2.0";
+    }
+  }
+  
   &-chapters {
     margin-top: 16px;
   }

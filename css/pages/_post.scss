@@ -5,9 +5,17 @@
   padding: 32px;
 
   &-header {
-    color: $color-sub;
-    font-size: 28px;
-    font-weight: bold;
+    h1 {
+      color: $color-sub;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    
+    &-note {
+      margin-top: 8px;
+      font-size: 18px;
+      color: #999;
+    }
   }
 
   &-participants {

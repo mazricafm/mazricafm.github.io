@@ -5,6 +5,7 @@ layout: default
   <article class="post">
     <header class="post-header">
       <h1>{{ page.title }}</h1>
+      <div class="post-header-note">{{ page.date | date: '%Y-%m-%d' }}</div>
     </header>
 
     <section class="post-content">
@@ -62,9 +63,9 @@ layout: default
       "songs": [
         {
           "name": "{{ page.title }}",
-          "artist": "Artist Name",
-          "album": "Album Name",
           "url": "{{ page.audio }}",
+          // "artist": "Artist Name",
+          // "album": "Album Name",
           // "cover_art_url": "/cover/art/url.jpg"
         },
       ]
