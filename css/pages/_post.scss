@@ -20,9 +20,11 @@
 
   &-participants {
     @include flex;
+    @include flex-wrap(wrap);
     margin-top: 16px;
 
     li {
+      margin-top: 8px;
       margin-right: 16px;
     }
   }
@@ -30,9 +32,12 @@
   &-content {
     margin-top: 16px;
 
-    .player,
     .markdown {
       margin-top: 32px;
+    }
+
+    .player {
+      margin: 32px -32px 0 -32px;
     }
   }
 

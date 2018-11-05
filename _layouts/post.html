@@ -57,20 +57,7 @@ layout: default
   </article>
 
 {% if page.audio != null %}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/amplitudejs/3.3.0/amplitude.min.js"></script>
   <script>
-    Amplitude.init({
-      "songs": [
-        {
-          "name": "{{ page.title }}",
-          "url": "{{ page.audio }}",
-          // "artist": "Artist Name",
-          // "album": "Album Name",
-          // "cover_art_url": "/cover/art/url.jpg"
-        },
-      ]
-    });
-
     var $back = document.querySelector('.back');
 
     $back.addEventListener('click', function(e) {

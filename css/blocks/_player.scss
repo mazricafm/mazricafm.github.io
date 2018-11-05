@@ -1,77 +1,145 @@
+$color-player-main: #fc4949;
+$color-player-white: #ffffff;
+$color-player-gray: #716f72;
+// $color-player-back: #1b1d1e;
+$color-player-back: #323435;
+
 .player {
-  &-control {
-    &-buttons {
-      @include flex;
+  background-color: $color-player-back;
+  // box-sizing: border-box;
+  padding: 64px 0 64px 0;
 
-      a {
-        margin-left: 8px;
+  &-progress {
+    @include flex;
+    @include align-items(center);
+    box-sizing: border-box;
+    padding: 0 32px 0 32px;
 
-        &:first-child {
-          margin-left: 0;
-        }
+    &-bar {
+      background-color: $color-player-gray;
+      border-radius: 6px;
+      cursor: pointer;
+      height: 8px;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+
+      &-inner {
+        background-color: $color-player-main;
+        border-radius: 4px;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        position: absolute;
+      }
+    }
+
+    &-state {
+      color: $color-player-gray;
+      margin-left: 8px;
+      font-size: 14px;
+    }
+  }
+
+  &-volume {
+    color: $color-player-gray;
+  }
+
+  &-buttons {
+    @include flex;
+    @include justify-content(center);
+    @include align-items(center);
+
+    box-sizing: border-box;
+    padding: 0 32px 0 32px;
+    position: relative;
+
+    a {
+      background-color: $color-player-main;
+      color: $color-player-white;
+      margin-left: 8px;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      cursor: pointer;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    &-download {
+      position: absolute;
+      right: 32px;
+    }
+
+    .amplitude-play-pause {
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      width: 42px;
+      height: 42px;
+      line-height: 42px;
+
+      &.amplitude-paused::before {
+        content: "\f04b";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        margin-left: 3px;
+      }
+    
+      &.amplitude-playing::before {
+        content: "\f04c";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+      }
+    }
+
+    .amplitude-mute {
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+
+      &.amplitude-muted::before {
+        content: "\f028";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+      }
+    
+      &.amplitude-not-muted::before {
+        content: "\f6a9";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+      }
+    }
+
+    .amplitude-playback-speed {
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: bold;
+      display: block;
+
+      &::before {
+        content: "x1.0";
+        margin-left: 3px;
+      }
+
+      &.amplitude-playback-speed-15::before {
+        content: "x1.5";
+        margin-left: 3px;
+      }
+
+      &.amplitude-playback-speed-20::before {
+        content: "x2.0";
+        margin-left: 3px;
       }
     }
   }
 
-  .amplitude-play-pause {
-    text-decoration: none;
-    font-size: 16px;
-    display: block;
-
-    &.amplitude-paused:before {
-      content: "\f04b";
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-    }
-  
-    &.amplitude-playing:before {
-      content: "\f04c";
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-    }
-  }
-
-  .amplitude-mute {
-    text-decoration: none;
-    font-size: 16px;
-    display: block;
-
-    &.amplitude-muted:before {
-      content: "\f028";
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-    }
-  
-    &.amplitude-not-muted:before {
-      content: "\f6a9";
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-    }
-  }
-
-  .amplitude-playback-speed {
-    text-decoration: none;
-    font-size: 16px;
-    display: block;
-
-    &:before {
-      content: "x1";
-    }
-
-    &.amplitude-playback-speed-15:before {
-      content: "x1.5";
-    }
-
-    &.amplitude-playback-speed-20:before {
-      content: "x2.0";
-    }
-  }
-  
   &-chapters {
     margin-top: 16px;
-  }
-
-  &-download {
-    margin-top: 16px;
+    // background-color: $color-player-white;
   }
 }

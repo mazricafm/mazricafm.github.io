@@ -33,9 +33,11 @@
 
       ul {
         @include flex;
+        @include flex-wrap(wrap);
         margin-top: 16px;
 
         li {
+          margin-top: 8px;
           margin-right: 16px;
         }
       }
