@@ -14,7 +14,7 @@ permalink: /
           {% for personalityId in post.personalities %}
             {% assign personality = site.data.personalities[personalityId] %}
             <li class="personality">
-              <a href="{{ personality.url }}">
+              <a href="{{ personality.url }}" target="_blank">
                 <div class="personality-img">
                   <img src="{{ personality.image }}" alt="{{ personality.name }}" />
                 </div>
@@ -27,7 +27,7 @@ permalink: /
           {% for guestId in post.guests %}
             {% assign guest = site.data.guests[guestId] %}
             <li class="guest">
-              <a href="{{ guest.url }}">
+              <a href="{{ guest.url }}" target="_blank">
                 <div class="guest-img">
                   <img src="{{ guest.image }}" alt="{{ guest.name }}" />
                 </div>

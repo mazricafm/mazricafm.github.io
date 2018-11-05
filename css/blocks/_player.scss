@@ -1,1 +1,9 @@
-// .player {}
+.player {
+  &-chapters {
+    margin-top: 16px;
+  }
+
+  &-download {
+    margin-top: 16px;
+  }
+}

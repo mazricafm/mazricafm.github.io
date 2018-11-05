@@ -14,12 +14,15 @@
     <a class="button amplitude-playback-speed">x1/x1.5/x2</a>
   </div>
 
-  <div>
-    <a class="button amplitude-skip-to" amplitude-song-index="0" amplitude-location="30">skip to 30sec</a> - 
-    <a class="button amplitude-skip-to" amplitude-song-index="0" amplitude-location="100">skip to 100sec</a>
-  </div>
+  <ol class="player-chapters">
+    {% for chapter in page.chapters %}
+    <li class="player-chapter">
+      <a class="amplitude-skip-to" amplitude-song-index="0" amplitude-location="{{ chapter[0] }}"><span class="player-chapter-time">({{ chapter[0] | date: "%M:%S" }})</span> {{ chapter[1] }}</a>
+    </li>
+    {% endfor %}
+  </ol>
 
-  <div class="download">
+  <div class="player-download">
     <a href="{{ page.audio }}" download="{{ site.title }}_{{ page.title }}.mp3">MP3ファイルをダウンロード</a>
   </div>
 </div>

@@ -2,18 +2,29 @@
 layout: default
 ---
 
-<div class="post container">
-  {% include player.html %}
-  {{ page.description }}
-  <div class="markdown">
-    {{ content }}
-  </div>
+<article class="post container">
+  <header class="post-header">
+    <h1>{{ page.title }}</h1>
+  </header>
+
+  <section class="post-content">
+    <p class="post-description">
+      {{ page.description }}
+    </p>
+
+    {% include player.html %}
+
+    <div class="markdown">
+      {{ content }}
+    </div>
+  </section>
+
   {% include tweet-button.html %}
 
-  <div>
+  <footer class="post-footer">
     <a class="back" href="/">戻る</a>
-  </div>
-</div>
+  </footer>
+</article>
 
 {% if page.audio != null %}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/amplitudejs/3.3.0/amplitude.min.js"></script>

@@ -1,5 +1,23 @@
 .post {
-  width: 600px;
-  margin: 0 auto;
-  border: 1px solid red;
+  background-color: $color-post-background;
+  border: 1px solid #ddd;
+  // margin-top: 16px;
+  padding: 32px;
+
+  &-header {
+    color: $color-sub;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  &-content {
+    margin-top: 16px;
+
+    .player,
+    .markdown {
+      margin-top: 16px;
+    }
+  }
+
+  // &-footer {}
 }
