@@ -149,10 +149,12 @@ $color-player-back: #323435;
   }
 
   &-chapter {
-    a {
+    &-title {
+      @include flex;
+      @include align-items(center);
+
       color: $color-player-white;
       cursor: pointer;
-      display: block;
       padding: 8px 32px;
       background-color: $color-player-gray;
       transition: background-color .2s ease;
@@ -161,11 +163,20 @@ $color-player-back: #323435;
         text-decoration: none;
         background-color: $color-player-main;
       }
-    }
 
-    &-time {
-      &::after {
-        content: " - "
+      &-time {
+        color: $color-player-white;
+        font-size: 12px;
+        display: block;
+  
+        &::after {
+          content: "-";
+          margin: 0 8px;
+        }
+      }
+  
+      &-name {
+        display: block;
       }
     }
   }

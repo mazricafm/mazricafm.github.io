@@ -22,7 +22,10 @@
   <ol class="player-chapters">
     {% for chapter in page.chapters %}
     <li class="player-chapter">
-      <a class="amplitude-skip-to" amplitude-song-index="0" amplitude-location="{{ chapter[0] }}"><span class="player-chapter-time">{{ chapter[0] | date: "%M:%S" }}</span>{{ chapter[1] }}</a>
+      <a class="player-chapter-title amplitude-skip-to" amplitude-song-index="0" amplitude-location="{{ chapter[0] }}">
+        <span class="player-chapter-title-time">{{ chapter[0] | date: "%M:%S" }}</span>
+        <span class="player-chapter-title-name">{{ chapter[1] }}</span>
+      </a>
     </li>
     {% endfor %}
   </ol>
