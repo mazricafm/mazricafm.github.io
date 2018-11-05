@@ -1,4 +1,4 @@
-$color-player-main: #fc4949;
+$color-player-main: #ee7800; // #fc4949;
 $color-player-white: #ffffff;
 $color-player-gray: #716f72;
 // $color-player-back: #1b1d1e;
@@ -7,7 +7,7 @@ $color-player-back: #323435;
 .player {
   background-color: $color-player-back;
   // box-sizing: border-box;
-  padding: 64px 0 64px 0;
+  padding: 32px 0 32px 0;
 
   &-progress {
     @include flex;
@@ -43,6 +43,7 @@ $color-player-back: #323435;
 
   &-volume {
     color: $color-player-gray;
+    padding: 0 32px 0 32px;
   }
 
   &-buttons {
@@ -55,7 +56,7 @@ $color-player-back: #323435;
     position: relative;
 
     a {
-      background-color: $color-player-main;
+      background-color: $color-player-gray;
       color: $color-player-white;
       margin-left: 8px;
       border-radius: 50%;
@@ -64,9 +65,14 @@ $color-player-back: #323435;
       line-height: 32px;
       text-align: center;
       cursor: pointer;
+      transition: background-color .2s ease;
 
       &:first-child {
         margin-left: 0;
+      }
+
+      &:hover {
+        background-color: $color-player-main;
       }
     }
 
@@ -140,6 +146,27 @@ $color-player-back: #323435;
 
   &-chapters {
     margin-top: 16px;
-    // background-color: $color-player-white;
+  }
+
+  &-chapter {
+    a {
+      color: $color-player-white;
+      cursor: pointer;
+      display: block;
+      padding: 8px 32px;
+      background-color: $color-player-gray;
+      transition: background-color .2s ease;
+
+      &:hover {
+        text-decoration: none;
+        background-color: $color-player-main;
+      }
+    }
+
+    &-time {
+      &::after {
+        content: " - "
+      }
+    }
   }
 }
